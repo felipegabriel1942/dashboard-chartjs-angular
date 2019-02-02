@@ -3,14 +3,6 @@
   <h1 style="color: white;">Painel de Indicadores</h1>
 </nav>
 <div class="ui-g">
-  <div [hidden]="!chart" class="ui-g-4" style="width: 550px; height: 250px;">
-    <canvas id="canvas" >{{ chart }}</canvas>
-  </div>
-  <div [hidden]="!chart" class="ui-g-4" style="width: 550px; height: 250px;">
-    <canvas id="teste" >{{ chart }}</canvas>
-  </div>
-  <div [hidden]="!chart" class="ui-g-4" style="width: 550px; height: 250px;">
-    <canvas id="espaco" >{{ chart }}</canvas>
-  </div>
+  <app-grafico [idGrafico]="idGrafico" [tipoGrafico]="tipoGrafico"></app-grafico>
 </div>
 
