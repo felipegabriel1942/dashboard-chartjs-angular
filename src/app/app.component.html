@@ -1,8 +1,18 @@
 
-<nav class="navbar navbar-dark bg-primary">
-  <h1 style="color: white;">Painel de Indicadores</h1>
-</nav>
+
+
+<app-barra-superior></app-barra-superior>
 <div class="ui-g">
-  <app-grafico [idGrafico]="idGrafico" [tipoGrafico]="tipoGrafico"></app-grafico>
+      <div class="ui-g-4" *ngFor="let grafico of listaDeGraficos"> 
+            <app-grafico [idGrafico]="grafico.titulo" 
+                  [tipoGrafico]="grafico.tipo" 
+                  [dadosGrafico]="grafico.dados" 
+                  [labelsGrafico]="grafico.labels" 
+                  [legendGrafico]="grafico.legenda">
+            </app-grafico>
+      </div>
 </div>
+  
+  
+
 

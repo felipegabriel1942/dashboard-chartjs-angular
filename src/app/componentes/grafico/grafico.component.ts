@@ -10,33 +10,30 @@ export class GraficoComponent implements AfterViewInit {
 
   @Input() idGrafico: string;
   @Input() tipoGrafico: string;
+  @Input() dadosGrafico: number[];
+  @Input() labelsGrafico: string[];
+  @Input() legendGrafico: string;
+
   chart: any;
 
   ngAfterViewInit() {
-    this.graficoBarra(this.idGrafico, this.tipoGrafico);
+    this.grafico(this.idGrafico, this.tipoGrafico);
    }
 
-  public graficoBarra(idGrafico: string, tipoGrafico: string) {
+  public grafico(idGrafico: string, tipoGrafico: string) {
     setTimeout(() => {
       this.chart = new Chart(idGrafico, {
         type: tipoGrafico,
         data: {
-          labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez' ],
+          labels: this.labelsGrafico,
           datasets: [
             {
-              label: 'Despesa',
-              data: [10, 15, 20],
+              label: this.legendGrafico,
+              data: this.dadosGrafico,
               borderColor: '#3cba9f',
               fill: false,
               backgroundColor: 'rgba(255, 99, 132, 0.2)'
-            },
-            {
-              label: 'Receita',
-              data: [12, 13, 15],
-              borderColor: '#ffcc00',
-              fill: false,
-              backgroundColor: 'rgba(255, 206, 86, 0.2)'
-            },
+            }
           ]
         },
         options: {
