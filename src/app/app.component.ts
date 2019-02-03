@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   cardTitulosNacionaisFortaleza;
   cardTitulosNacionaisCeara;
   evolucaoPontosGanhos;
+  pontosGanhosSobreDisputados;
 
 
   constructor() {
@@ -34,19 +35,19 @@ export class AppComponent implements OnInit {
      'bar');
      this.golsPorJogador = new Dados('10 Maiores goleadores',
      [13, 7, 4, 3, 3, 3, 3, 2, 2 , 2],
-     ['Gustavo', 'Bruno', 'Dodo', 'Luís', 'Ederson', 'Marcio', 'Marlon', 'Guilherme', 'Edinho', 'Ligger'],
+     ['Gustavo', 'Bruno', 'Dodô', 'Luís', 'Ederson', 'Marcio', 'Marlon', 'Guilherme', 'Edinho', 'Ligger'],
      'Gols',
      'horizontalBar');
      this.evolucaoPontosGanhos = new Dados('Evolução de pontos ganhos',
-     [3, 6, 9, 10, 13, 16, 19, 22, 23, 23, 26,26,29,29,29,
+     [3, 6, 9, 10, 13, 16, 19, 22, 23, 23, 26, 26, 29, 29, 29,
       30,31,34,37,40,43,43,46,46,47,47,47,50,53,56,57,60,61,64,65,68,71],
      ['1','2','3','4','5','6','7','8','9','10','1','12','13','14','15','16','17','18','19','20',
      '21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38'],
      'Pontos',
      'line');
-     this.vitoriasDentroFora = new Dados('Vitórias Mandate x Visitante',
+     this.vitoriasDentroFora = new Dados('Vitórias Mandante x Visitante',
      [13, 8 ],
-     ['Mandate', 'Visitante'],
+     ['Mandante', 'Visitante'],
      '',
      'pie');
      this.cardVitoria = new Dados('Vitórias',
@@ -89,9 +90,15 @@ export class AppComponent implements OnInit {
      [],
      '',
      'card');
+     this.pontosGanhosSobreDisputados = new Dados('Pontos Ganhos/Disputados',
+     [62],
+     [],
+     '',
+     'progress');
     this.listaDeGraficos.push( this.cardVitoria, this.cardDerrotas, this.cardEmpates,
       this.cardPontosGanhos, this.cardGolsMarcados, this.cardGolsSofridos , this.cardTitulosNacionaisFortaleza,
-      this.cardTitulosNacionaisCeara, this.maioresPublicos, this.vitoriasDentroFora, this.golsPorJogador, this.evolucaoPontosGanhos );
+      this.cardTitulosNacionaisCeara, this.maioresPublicos, this.vitoriasDentroFora,  this.evolucaoPontosGanhos, 
+       this.golsPorJogador , this.pontosGanhosSobreDisputados );
   }
 
   ngOnInit() {

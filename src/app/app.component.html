@@ -2,17 +2,21 @@
 
 
 <app-barra-superior></app-barra-superior>
-
-<div >
-      <div *ngFor="let grafico of listaDeGraficos" style="align-content: center;"> 
-      <app-grafico [idGrafico]="grafico.titulo" 
-                        [tipoGrafico]="grafico.tipo" 
-                        [dadosGrafico]="grafico.dados" 
-                        [labelsGrafico]="grafico.labels" 
-                        [legendGrafico]="grafico.legenda">
-      </app-grafico>
+<div class="content row">
+      <div *ngFor="let grafico of listaDeGraficos" >
+            <app-grafico [idGrafico]="grafico.titulo" 
+                  [tipoGrafico]="grafico.tipo" 
+                  [dadosGrafico]="grafico.dados" 
+                  [labelsGrafico]="grafico.labels" 
+                  [legendGrafico]="grafico.legenda">
+            </app-grafico>
       </div>
 </div>
+
+<div class="footer">
+      <p style="float: right;font-size: 12px;">Criado por Felipe Gabriel Pinheiro (2019).</p>
+</div>
+
 
 
   

@@ -1,16 +1,27 @@
 
  
-      <div [hidden]="!chart" style="width: 340px;height: 180px; margin: 5px;" *ngIf="tipoGrafico == 'pie' || tipoGrafico == 'bar'" class="ui-g-4 card">
+      <div [hidden]="!chart" style="width: 250px;height: 300px; margin: 5px;" *ngIf="tipoGrafico == 'pie' || tipoGrafico == 'bar'" class="ui-g-4 card">
         <canvas [id]=[idGrafico]>{{ chart }}</canvas>
       </div>
-      <div [hidden]="!chart" style="width: 340px;height: 300px; margin: 5px;" *ngIf="tipoGrafico == 'horizontalBar'" class="ui-g-4 card">
+      <div [hidden]="!chart" style="width: 250px;height: 300px; margin: 5px;" *ngIf="tipoGrafico == 'horizontalBar'" class="ui-g-4 card">
         <canvas [id]=[idGrafico]>{{ chart }}</canvas>
       </div>
-      <div [hidden]="!chart" style="width: 340px;height: 300px; margin: 5px;" *ngIf="tipoGrafico == 'line'" class="ui-g-4 card">
+      <div [hidden]="!chart" style="width: 250px;height: 300px; margin: 5px;" *ngIf="tipoGrafico == 'line'" class="ui-g-4 card">
         <canvas [id]=[idGrafico]>{{ chart }}</canvas>
       </div>
-      <div *ngIf="tipoGrafico == 'card'" class="ui-g-1 card" style="width: 190px;height: 100px; margin: 5px;">        
-          <h5 style="text-align: center; font-weight: bold">{{idGrafico}}</h5>
-          <p style="text-align: center;font-size: 14;">{{dadosGrafico}}</p>      
+      <div *ngIf="tipoGrafico == 'card'" class="ui-g-1 card" style="width: 150px;height: 100px; margin: 5px; ">        
+          <h6 style="text-align: center; font-weight: bold">{{idGrafico}}</h6>
+          <p style="text-align: center;font-size: 10;">{{dadosGrafico}}</p>      
+      </div>
+      <div *ngIf="tipoGrafico == 'progress'" class="ui-g-4 card" style="width: 250px;height: 300px; margin: 5px;">
+        <h5 style="text-align: center; font-weight: bold">{{idGrafico}}</h5>
+        <circle-progress
+          [percent]="dadosGrafico"
+          [radius]="100"
+          [subtitle]="''"
+          [titleFontSize]="40"
+          [unitsFontSize]="40"
+          
+        ></circle-progress>
       </div>
 

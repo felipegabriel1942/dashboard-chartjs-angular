@@ -52,6 +52,7 @@ export class GraficoComponent implements AfterViewInit {
           ]
         },
         options: {
+          maintainAspectRatio: false,
           plugins: {
             datalabels: {
               anchor: 'end',
@@ -246,13 +247,14 @@ export class GraficoComponent implements AfterViewInit {
           ]
         },
         options: {
+          maintainAspectRatio: false,
           animation: {
             duration: 1000,
             easing: 'linear'
           },
           legend: {
             display: true,
-            position: 'right'
+            position: 'bottom'
           },
           title: {
             display: true,
