@@ -13,8 +13,8 @@ import { Dados } from '../app/models/dados.model';
 export class AppComponent implements OnInit {
   public listaDeGraficos: Dados[] = [];
   maioresPublicos;
-  grafico2;
-  grafico3;
+  golsPorJogador;
+  vitoriasDentroFora;
   cardVitoria;
   cardDerrotas;
   cardEmpates;
@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   cardGolsSofridos;
   cardTitulosNacionaisFortaleza;
   cardTitulosNacionaisCeara;
+  evolucaoPontosGanhos;
 
 
   constructor() {
@@ -31,15 +32,22 @@ export class AppComponent implements OnInit {
      ['1', '2', '3', '4', '5'],
      'Público',
      'bar');
-     this.grafico2 = new Dados('Receitas mês a mês',
-     [155, 230, 450, 126, 356, 459, 523, 456, 236, 789, 129, 359],
-     ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-     'Receita',
-     'bar');
-     this.grafico3 = new Dados('Tipos de despesa',
-     [630, 750, 1250, 1000 ],
-     ['Saúde', 'Transporte', 'Cartão de Crédito', 'Alimentação'],
-     'Receita',
+     this.golsPorJogador = new Dados('10 Maiores goleadores',
+     [13, 7, 4, 3, 3, 3, 3, 2, 2 , 2],
+     ['Gustavo', 'Bruno', 'Dodo', 'Luís', 'Ederson', 'Marcio', 'Marlon', 'Guilherme', 'Edinho', 'Ligger'],
+     'Gols',
+     'horizontalBar');
+     this.evolucaoPontosGanhos = new Dados('Evolução de pontos ganhos',
+     [3, 6, 9, 10, 13, 16, 19, 22, 23, 23, 26,26,29,29,29,
+      30,31,34,37,40,43,43,46,46,47,47,47,50,53,56,57,60,61,64,65,68,71],
+     ['1','2','3','4','5','6','7','8','9','10','1','12','13','14','15','16','17','18','19','20',
+     '21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38'],
+     'Pontos',
+     'line');
+     this.vitoriasDentroFora = new Dados('Vitórias Mandate x Visitante',
+     [13, 8 ],
+     ['Mandate', 'Visitante'],
+     '',
      'pie');
      this.cardVitoria = new Dados('Vitórias',
      [21],
@@ -83,7 +91,7 @@ export class AppComponent implements OnInit {
      'card');
     this.listaDeGraficos.push( this.cardVitoria, this.cardDerrotas, this.cardEmpates,
       this.cardPontosGanhos, this.cardGolsMarcados, this.cardGolsSofridos , this.cardTitulosNacionaisFortaleza,
-      this.cardTitulosNacionaisCeara, this.maioresPublicos, this.grafico2, this.grafico3 );
+      this.cardTitulosNacionaisCeara, this.maioresPublicos, this.vitoriasDentroFora, this.golsPorJogador, this.evolucaoPontosGanhos );
   }
 
   ngOnInit() {
