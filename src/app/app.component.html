@@ -2,16 +2,18 @@
 
 
 <app-barra-superior></app-barra-superior>
-<div class="ui-g">
-      <div class="ui-g-4" *ngFor="let grafico of listaDeGraficos"> 
-            <app-grafico [idGrafico]="grafico.titulo" 
-                  [tipoGrafico]="grafico.tipo" 
-                  [dadosGrafico]="grafico.dados" 
-                  [labelsGrafico]="grafico.labels" 
-                  [legendGrafico]="grafico.legenda">
-            </app-grafico>
+
+<div >
+      <div *ngFor="let grafico of listaDeGraficos" style="align-content: center;"> 
+      <app-grafico [idGrafico]="grafico.titulo" 
+                        [tipoGrafico]="grafico.tipo" 
+                        [dadosGrafico]="grafico.dados" 
+                        [labelsGrafico]="grafico.labels" 
+                        [legendGrafico]="grafico.legenda">
+      </app-grafico>
       </div>
 </div>
+
   
   
 
